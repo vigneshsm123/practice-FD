@@ -1,0 +1,196 @@
+<section>
+  <div class="inner">
+   <ul class="topiclist m-b-0">
+      <li class="header brand-grey">
+         <dl class="row-item">
+            <dt>
+               <div class="list-inner">Different types of forums</div>
+            </dt>
+            <dd class="topics">Topics</dd>
+            <dd class="posts">Posts</dd>
+            <dd class="lastpost"><span>Last post</span></dd>
+         </dl>
+      </li>
+   </ul>
+   <ul class="topiclist forums">
+      <li class="row ">
+         <dl class="row-item forum_read_subforum">
+            <dt title="No unread posts">
+               <div class="list-inner">
+                  <a  class="forumtitle">Salesforce Forum</a>
+                  <br>Forum with demo content example																										
+                  <br><strong>Subforums:</strong>
+                  <a class="subforum read" title="No unread posts">
+                  <i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Subforum1
+                  </a>
+                  , 															<a class="subforum read" title="No unread posts">
+                  <i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Subforum2
+                  </a>
+                  <div class="responsive-show" style="display: none;">
+                     Topics: <strong>5</strong>
+                  </div>
+               </div>
+            </dt>
+            <dd class="topics">5 <dfn>Topics</dfn></dd>
+            <dd class="posts">35 <dfn>Posts</dfn></dd>
+            <dd class="lastpost">
+               <span>
+               <dfn>Last post</dfn>
+               <a title="Re: Topic with replies" class="lastsubject">Re: Topic with replies</a> <br>
+               by <a class="username-coloured">Vignesh SM</a>
+               <a title="">
+               <i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+               </a>
+               <br>Fri Dec 30, 2016 2:59 pm
+               </span>
+            </dd>
+         </dl>
+      </li>
+      <li class="row">
+         <dl class="row-item forum_unread">
+            <dt title="No unread posts">
+               <div class="list-inner">
+                  <a class="forumtitle">Enterprise Solutions Forum</a>
+                  <br>Unread forum example												
+                  <div class="responsive-show" style="display: none;">
+                  </div>
+               </div>
+            </dt>
+            <dd class="topics">0 <dfn>Topics</dfn></dd>
+            <dd class="posts">0 <dfn>Posts</dfn></dd>
+            <dd class="lastpost">
+               <span>
+               No posts<br>&nbsp;
+               </span>
+            </dd>
+         </dl>
+      </li>
+      <li class="row">
+         <dl class="row-item forum_read">
+            <dt title="No unread posts">
+               <div class="list-inner">
+                  <!--
+                     <a class="feed-icon-forum" title="Feed - Forum with rules" href="/phpBB3/Subway-theme/app.php/feed?f=6">
+                     	<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Forum with rules</span>
+                     </a>
+                     -->
+                  <a class="forumtitle">Forum with rules</a>
+                  <br>Forum with rules example												
+                  <div class="responsive-show" style="display: none;">
+                  </div>
+               </div>
+            </dt>
+            <dd class="topics">0 <dfn>Topics</dfn></dd>
+            <dd class="posts">0 <dfn>Posts</dfn></dd>
+            <dd class="lastpost">
+               <span>
+               No posts<br>&nbsp;
+               </span>
+            </dd>
+         </dl>
+      </li>
+      <li class="row">
+         <dl class="row-item forum_read_locked">
+            <dt title="Forum locked">
+               <div class="list-inner">
+                  <a class="forumtitle">Locked forum</a>
+                  <br>Locked forum example												
+                  <div class="responsive-show" style="display: none;">
+                  </div>
+               </div>
+            </dt>
+            <dd class="topics">0 <dfn>Topics</dfn></dd>
+            <dd class="posts">0 <dfn>Posts</dfn></dd>
+            <dd class="lastpost">
+               <span>
+               No posts<br>&nbsp;
+               </span>
+            </dd>
+         </dl>
+      </li>
+      <li class="row">
+         <dl class="row-item forum_read">
+            <dt title="No unread posts">
+               <div class="list-inner">
+                  <a class="forumtitle">Password protected</a>
+                  <br>Password protected forum example												
+                  <div class="responsive-show" style="display: none;">
+                  </div>
+               </div>
+            </dt>
+            <dd class="topics">0 <dfn>Topics</dfn></dd>
+            <dd class="posts">0 <dfn>Posts</dfn></dd>
+            <dd class="lastpost">
+               <span>
+               No posts<br>&nbsp;
+               </span>
+            </dd>
+         </dl>
+      </li>
+   </ul>
+</div>
+</section>
+
+<section ng-controller="ArticlesListController as vm" class="m-t-10 section-space">
+   <h1 class="m-b-2">Articles</h1>
+  <div class="inner">
+   <ul class="topiclist m-b-0">
+      <li class="header brand-grey">
+         <dl class="row-item">
+            <dt>
+               <div class="list-inner">Forum Topic / Title</div>
+            </dt>
+            <dd class="topics">Category</dd>
+            <dd class="posts">Posted By</dd>
+            <dd class="lastpost"><span>Last post</span></dd>
+         </dl>
+      </li>
+   </ul>
+   <ul class="topiclist forums">
+      <li class="row" ng-repeat="article in vm.articles" ng-if="article.approval" ui-sref="articles.view({ articleId: article._id })">
+         <dl class="row-item forum_read_subforum">
+            <dt title="">
+               <div class="list-inner">
+                  <a  class="forumtitle" ng-bind="article.title"></a>
+                  <br>
+                    <!---->
+                  <p class="list-group-item-text">
+                    <span ng-bind-html ="vm.removeHtmlTag(article.content) | limitTo:120"></span>
+                    <span  ng-if="article.content.length>120" class="text-brandblue"><b> ...read more</b></span></p>                
+                  <div class="responsive-show" style="display: none;">
+                     Topics: <strong>5</strong>
+                  </div>
+               </div>
+            </dt>
+            <dd class="topics"> <dfn>Topics</dfn></dd>
+            <dd class="posts" ng-bind="article.user.displayName"><dfn>Posts</dfn></dd>
+            <dd class="lastpost">
+               <span>
+               <dfn>Last post</dfn>
+            <span ng-bind="article.created | date:'mediumDate'"></span>
+               </span>
+            </dd>
+         </dl>
+      </li>
+   </ul>
+</div>
+</section>
+
+<!--<section ng-controller="ArticlesListController as vm">
+  <div class="page-header">
+    <h1>Articles</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="article in vm.articles" ui-sref="articles.view({ articleId: article._id })" class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+      <p class="list-group-item-text" ng-bind="article.content"></p>
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="article.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="article.user" ng-bind="article.user.displayName"></span>
+        <span ng-if="!article.user">Deleted User</span>
+      </small>
+    </a>
+  </div>
+</section>-->

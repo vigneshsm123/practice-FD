@@ -1,0 +1,208 @@
+<div id="page-header" ng-controller="HeaderController as vm">
+   <div class="headerbar" role="banner">
+      <div class="inner">
+         <div class="top"></div>
+         <div class="col-md-12">
+           <div class="col-md-4">
+              <div id="site-description">
+                <!-- LOGO START BELOW-->
+                <div class="logo-img col-xs-12"></div>				
+                <div class="col-xs-12 sub-heading">
+                  discussion forum | Learn & Educate
+                </div>
+                <!--<a id="logo" class="logo" ui-sref="home"  title="Board index">
+                <span class="logo-text">MST Discussion Forum</span>
+                </a>						-->
+                <!-- LOGO END -->				 
+                <!--<p class="skiplink"><a href="#start_here">Skip to content</a></p>-->
+            </div>
+           </div>
+           <div class="col-md-8">
+                <div class="navbar" role="navigation">
+                  <div class="inner">
+                    <div id="responsive-menu-button">
+                        <!--<a href="#"></a>-->
+                    </div>
+                    <ul id="nav-main" role="menubar">
+                        <li class="li-home"  ui-sref-active="active"><a ui-sref="home"  title="Board index"><i class="icon-home"></i><span>Home</span></a></li>
+                        <li class="has-dropdown li-useful">
+                          <a ><i class="icon-lifebuoy"></i><span>Quick links</span></a>			
+                          <ul class="dropdown-menu" role="menu">
+                              <li><a rel="help" title="Frequently Asked Questions" role="menuitem"><i class="icon-uniE09F"></i>FAQ</a></li>
+                              <li><a  role="menuitem"><i class="icon-uniE0BA"></i>The team</a></li>
+                          </ul>
+                        </li>
+                        <li class="has-dropdown li-forum">
+                          <a ><i class="icon-comments"></i><span>Forum</span></a>
+                          <ul class="dropdown-menu" role="menu">
+                              <li><a  role="menuitem"><i class="icon-uniE04C"></i>Unanswered topics</a></li>
+                              <li><a role="menuitem"><i class="icon-uniE03A"></i>Active topics</a></li>
+                          </ul>
+                          <!-- end dropdown-menu -->
+                        </li>
+                        <li class="four-cubes">
+                          <ul>
+                              <li class="small-cube"  ui-sref-active="active"><a  ui-sref="authentication.signup" title="Registration is disabled"><i class="icon-upload"></i></a></li>
+                              <li class="small-cube"  ui-sref-active="active" ui-sref="authentication.signin"><a  ui-sref="authentication.signin" title="Login"><i class="icon-switch"></i><span>Login</span></a></li>
+                              <li class="small-cube hide-max992 guest-link"><a  title="Hello, guest !"><i class="icon-user3"></i></a></li>
+                              <li class="small-cube"><a title="Contact us" role="menuitem"><i class="icon-feather"></i><span>Contact us</span></a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+           </div>
+         </div>
+         
+         
+         <!-- Modal login -->
+         <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content cube-bg-1">
+                  <form method="post" action="./ucp.php?mode=login">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-uniE0BE"></i></button> 						
+                     </div>
+                     <div class="modal-body">
+                        <div class="modal-login-block">
+                           <div class="modal-login-header">
+                              <h2>Login</h2>
+                              <a href="./ucp.php?mode=register" class="small-link">Register</a>
+                           </div>
+                           <div class="modal-login-content">
+                              <fieldset class="quick-login">
+                                 <div class="mb20">				    					
+                                    <input type="text" placeholder="" name="username" id="username" size="10" class="inputbox autowidth input-icon" title="Username">
+                                 </div>
+                                 <div class="mb20">				    					
+                                    <input placeholder="" type="password" name="password" id="password" size="10" class="inputbox autowidth input-icon" title="Password">
+                                 </div>
+                                 <div class="mb10">	
+                                    <a class="op-link" href="http://www.komidesign.com/phpBB3/Subway-theme/ucp.php?mode=sendpassword">I forgot my password</a>
+                                 </div>
+                                 <div class="mb10">
+                                    <label class="op-link" for="autologin">Remember me <input type="checkbox" name="autologin" id="autologin"></label>
+                                 </div>
+                                 <div class="mb20">
+                                    <label class="op-link" for="viewonline">Hide my online status this session <input type="checkbox" name="viewonline" id="viewonline" tabindex="5"></label>
+                                 </div>
+                                 <input type="submit" name="login" value="Login" class="button2">
+                                 <input type="hidden" name="redirect" value="./index.php?">
+                              </fieldset>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- Modal login END-->										
+      </div>
+   </div>
+   <div class="navbar-bottom p-0">
+      <!--<div id="search-box" class="search-box search-header">
+         <form action="./search.php" method="get" id="search">
+            <fieldset>
+               <input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…">
+               <button class="button icon-button search-icon" type="submit" title="Search"></button>
+               <a href="./search.php" class="button icon-button search-adv-icon" title="Advanced search"></a>
+            </fieldset>
+         </form>
+      </div>
+      <ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+         <li class="small-icon icon-home breadcrumbs">
+            <span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="./index.php" accesskey="h" data-navbar-reference="index" itemprop="url" title="Board index"><span itemprop="title">Board index</span></a></span>
+         </li>
+      </ul>-->
+      <div class="navbar-header" ng-if="vm.authentication.user">
+        <button class="navbar-toggle" type="button" ng-click="vm.isCollapsed = !vm.isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+      </div>
+     <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation" ng-if="vm.authentication.user">
+      <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
+         <li class="dropdown" ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
+            <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+            <ul ng-switch-when="dropdown" class="dropdown-menu">
+               <li ui-sref-active="active" ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(vm.authentication.user);">
+                  <a ui-sref="{{subitem.state}}({{subitem.params}})" ng-bind="subitem.title"></a>
+               </li>
+            </ul>
+            <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
+         <li class="dropdown p-user" uib-dropdown>
+            <a class="dropdown-toggle user-header-dropdown-toggle a-user" uib-dropdown-toggle role="button">
+            <img ng-src="/{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" />
+            <span ng-bind="vm.authentication.user.displayName" class="middle-label"></span> <b class="caret caret-m"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+               <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items">
+                  <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+               </li>
+               <!--<li class="divider"></li>-->
+               <li>
+                  <a href="/api/auth/signout" target="_self">Signout</a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </nav>
+   </div>
+</div>
+
+<!--
+<div class="container" ng-controller="HeaderController as vm">
+   <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="vm.isCollapsed = !vm.isCollapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a ui-sref="home" class="navbar-brand"><span class="mst-logo"></span></a>
+   </div>
+   <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation">
+      <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
+         <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
+            <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+            <ul ng-switch-when="dropdown" class="dropdown-menu">
+               <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(vm.authentication.user);">
+                  <a ui-sref="{{subitem.state}}({{subitem.params}})" ng-bind="subitem.title"></a>
+               </li>
+            </ul>
+            <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
+         <li ui-sref-active="active">
+            <a ui-sref="authentication.signup">Sign Up</a>
+         </li>
+         <li class="divider-vertical"></li>
+         <li ui-sref-active="active">
+            <a ui-sref="authentication.signin">Sign In</a>
+         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
+         <li class="dropdown" uib-dropdown>
+            <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
+            <img ng-src="/{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" />
+            <span ng-bind="vm.authentication.user.displayName"></span> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+               <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items">
+                  <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+               </li>
+               <li class="divider"></li>
+               <li>
+                  <a href="/api/auth/signout" target="_self">Signout</a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </nav>
+</div>-->

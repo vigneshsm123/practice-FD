@@ -1,0 +1,22 @@
+<section class="manage-user">
+  <div class="page-header">
+    <div class="row">
+      <div class=" col-sm-12">
+        <h1>Users</h1>
+      </div>
+      <div class="col-sm-12" style="margin-top: 2em;">
+        <input class="inputbox autowidth col-md-4" type="text" ng-model="vm.search" placeholder="Search" ng-change="vm.figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="user in vm.pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
+      <img  ng-src="/{{user.profileImageURL}}" class="img img-circle pull-left" alt="{{user.displayName}}" class="header-profile-image" height="30px" width="30px" style="margin-right:7px; border: 1px solid #CCC" alt="">
+      <h4 class="list-group-item-heading text-brandblue" ng-bind="user.username"></h4>
+      <p class="list-group-item-text pull-right small text-brandblue" ng-class="{'text-brandpink':user.roles.indexOf('user')==-1}"ng-bind="user.roles"></p>
+      <p class="list-group-item-text small" ng-bind="user.email"></p>
+    </a>
+  </div>
+
+  <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength" ng-model="vm.currentPage" ng-change="vm.pageChanged()"></uib-pagination>
+</section>

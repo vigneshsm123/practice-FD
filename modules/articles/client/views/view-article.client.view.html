@@ -1,0 +1,132 @@
+<div id="page-body" role="main">
+   <h2 class="topic-title"><a ng-bind="vm.article.title"></a></h2>
+   <div id="p7" class="post has-profile bg2">
+      <div class="inner">
+         <dl class="postprofile" id="profile7">
+            <dt class="has-profile-rank no-avatar">
+               <div class="avatar-container">
+               </div>
+               <a class="username-coloured" ng-if="vm.article.user" ng-bind="vm.article.user.displayName"></a>							
+            </dt>
+            <dd class="profile-rank">Site Admin</dd>
+            <dd class="profile-posts"><strong>Replies :</strong> <a ng-bind="vm.article.comments.length">0</a></dd>
+            <dd class="profile-joined"  ng-bind="vm.article.created | date:'mediumDate'"><strong>Joined:</strong></dd>
+         </dl>
+         <div class="postbody">
+            <div id="post_content7">
+               <h3 class="first"><a href="#p7" ng-bind="vm.article.title"></a></h3>
+               <!--<ul class="post-buttons">
+                  <li>
+                     <a href="./posting.php?mode=quote&amp;f=2&amp;p=7" title="Reply with quote" class="button button-icon-only">
+                     <i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+                     </a>
+                  </li>
+                  <li class="responsive-menu hidden dropdown-container">
+                     <a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a>
+                     <div class="dropdown">
+                        <div class="pointer">
+                           <div class="pointer-inner"></div>
+                        </div>
+                        <ul class="dropdown-contents"></ul>
+                     </div>
+                  </li>
+               </ul>-->
+               <p class="author">
+                  <a class="unread" title="Post">
+                  <i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+                  </a>
+                  <span class="responsive-hide">by <strong><a class="username-coloured" ng-if="vm.article.user" ng-bind="vm.article.user.displayName"></a></strong> » </span><span  ng-bind="vm.article.created | date:'mediumDate'"></span>
+               </p>
+               <div class="content"  ng-bind-html="vm.article.content">             
+               </div>
+            </div>
+         </div>
+         <div class="back2top">
+            <a href="#top" class="top" title="Top">
+            <!--<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>-->
+            <span class="sr-only">Top</span>
+            </a>
+         </div>
+      </div>
+      <div class="inner" ng-if="vm.article.comments.length>0">
+          <div class="postbody">
+            <div id="post_content7">
+               <h3 class="first">Comments</h3>
+               <div class="content" ng-repeat="article in vm.article.comments">
+                  <div>
+                  <img  ng-src="/{{article.user.user.profileImageURL}}" class="img img-circle pull-left" alt="{{article.user.user.displayName}}" class="header-profile-image" height="30px" width="30px" style="margin-right:7px; border: 1px solid #CCC" alt="">
+                  <span class="" style="padding-left: 10px"><strong>
+                    <a  class="username-coloured"  ng-bind="article.user.user.displayName"></a>
+                    </strong> » </span><span  ng-bind="vm.article.created | date:'mediumDate'"></span>
+                    <span ng-if="article.user.user.email == vm.authentication.user.email" ng-click="vm.deleteComments($index);"><i class="fa fa-close pull-right"></i></span></div>
+                  <div class="author" style="margin-left: 48px;">
+                    {{article.content}}
+                  </div>
+               <hr class="divider">
+              </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="divider">
+   <div class="panel">
+      <form name="commentsForm" ng-submit="vm.addcomments(commentsForm.$valid, msg)" novalidate>
+        <div class="form-group">
+      <textarea type="text" ng-model="msg" placeholder="Comments" rows="5"  required="" autofocus="" class="inputbox autowidth"> </textarea>
+</div>
+      <div class="action-bar bar-bottom">
+         <input type="submit" href="" class="button1" value="Post a reply">
+         </input>
+         <!--<div class="pagination">
+            1 post
+            • Page <strong>1</strong> of <strong>1</strong>
+         </div>-->
+      </div>
+</form>
+      <p class="jumpbox-return" ui-sref="home">
+         <a class="left-box arrow-left" accesskey="r">
+         <span>Return to Forum</span>
+         </a>
+      </p>
+      <!--<div class="jumpbox dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+         <span title="Jump to" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+         <span>Jump to</span>
+         <span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+         </span>
+         <div class="dropdown">
+            <div class="pointer">
+               <div class="pointer-inner"></div>
+            </div>
+            <ul class="dropdown-contents">
+               <li><a href="./viewforum.php?f=1" class="jumpbox-cat-link"> <span> Different types of forums</span></a></li>
+               <li><a href="./viewforum.php?f=2" class="jumpbox-sub-link"><span class="spacer"></span> <span> ↳ &nbsp; Forum with demo content</span></a></li>
+               <li><a href="./viewforum.php?f=9" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span> ↳ &nbsp; Subforum1</span></a></li>
+               <li><a href="./viewforum.php?f=10" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span> ↳ &nbsp; Subforum2</span></a></li>
+               <li><a href="./viewforum.php?f=5" class="jumpbox-sub-link"><span class="spacer"></span> <span> ↳ &nbsp; Unread forum</span></a></li>
+               <li><a href="./viewforum.php?f=6" class="jumpbox-sub-link"><span class="spacer"></span> <span> ↳ &nbsp; Forum with rules</span></a></li>
+               <li><a href="./viewforum.php?f=7" class="jumpbox-sub-link"><span class="spacer"></span> <span> ↳ &nbsp; Locked forum</span></a></li>
+               <li><a href="./viewforum.php?f=8" class="jumpbox-sub-link"><span class="spacer"></span> <span> ↳ &nbsp; Password protected</span></a></li>
+               <li><a href="./viewforum.php?f=3" class="jumpbox-cat-link"> <span> Links</span></a></li>
+               <li><a href="./viewforum.php?f=4" class="jumpbox-sub-link"><span class="spacer"></span> <span> ↳ &nbsp; Buy Subway phpbb3 Theme</span></a></li>
+            </ul>
+         </div>
+      </div>-->
+   </div>
+</div>
+
+
+<!--<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.article.title"></h1>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.article.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.article.user" ng-bind="vm.article.user.displayName"></span>
+      <span ng-if="!vm.article.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.article.content"></p>
+</section>-->

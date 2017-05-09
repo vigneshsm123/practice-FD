@@ -1,0 +1,35 @@
+<section class="manage-user clearfix">
+  <div class="page-header">
+    <h1>User - <span ng-bind="vm.user.username" class=""></span></h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.userForm" ng-submit="vm.update(vm.userForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" class="inputbox autowidth" ng-model="vm.user.firstName" placeholder="First Name" required autofocus />
+          <div ng-messages="vm.userForm.firstName.$error" role="alert">
+            <p class="m-l-7 help-block error-text" ng-message="required">First name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" class="inputbox autowidth" ng-model="vm.user.lastName" placeholder="Last Name" required />
+          <div ng-messages="vm.userForm.lastName.$error" role="alert">
+            <p class="m-l-7 help-block error-text" ng-message="required">Last name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="roles">Roles  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="inputbox autowidth" type="text" name="roles" ng-model="vm.user.roles" id="roles" ng-list required />
+            <div ng-messages="vm.userForm.roles.$error" role="alert">
+              <p class="m-l-7 help-block error-text" ng-message="required">At least one role is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Update" class="button1">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

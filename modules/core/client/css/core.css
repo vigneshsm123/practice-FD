@@ -1,0 +1,86 @@
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  border-radius: 50%;
+  height: 28px;
+  margin-right: 5px;
+  opacity: 0.8;
+  width: 28px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-bottom: 11px !important;
+  padding-top: 11px !important;
+}
+.user-primary-account {
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+.mst-logo {
+    background: url(../img/brand/mst-logo.svg) no-repeat;
+    height: 26px;
+    float: left;
+    width: 132px;
+    margin-top: -3px;
+}
+body, h1, h2, h3, h4, label, a, p{
+  font-family: 'Roboto', sans-serif !important;
+}
+.btn{
+  border-radius: 0px;
+}
+p.help-block{
+  font-size: 11px;
+}
+/*h2{
+  color: #1778bd;
+}*/
+header {
+    border: none !important;
+    background-image: none !important;
+    padding: 0 !important;
+}
+
+.p-0{
+  padding: 0 !important;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+     background-color: #5b6e7a;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+     color: #fff; 
+     background-color:none !important;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
+    background-image: none !important;
+     box-shadow: none !important;
+}
